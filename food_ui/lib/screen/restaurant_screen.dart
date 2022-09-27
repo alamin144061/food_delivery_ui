@@ -30,12 +30,19 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text("${widget.restaurant!.name}"),
-                  Text("${widget.restaurant!.address}"),
+                  Column(
+                    children: [
+                      Text("${widget.restaurant!.name}"),
+                      Text("${widget.restaurant!.address}"),
+                    ],
+                  ),
+                  Text('0.5 miles'),
                 ],
               ),
-              Text('0.5 miles'),
             ],
+          ),
+          SizedBox(
+            height: 10,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,

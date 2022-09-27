@@ -4,9 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:food_ui/data/data.dart';
+import 'package:food_ui/data/data.dart';
 import 'package:food_ui/models/restaurant.dart';
 import 'package:food_ui/screen/recent_order.dart';
 import 'package:food_ui/screen/restaurant_screen.dart';
+
+import '../data/data.dart';
+import '../data/data.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -27,17 +31,36 @@ class _HomeScreenState extends State<HomeScreen> {
                   )));
         },
         child: Container(
+          height: 150,
+          margin: EdgeInsets.all(15),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            color: Colors.grey.withOpacity(.2),
+          ),
           child: Row(
+            //  mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               ClipRRect(
                 borderRadius: BorderRadius.circular(15),
-                child: Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Image(
-                      height: 150,
-                      width: 150,
-                      fit: BoxFit.cover,
-                      image: AssetImage("${restaurant.imageUrl}")),
+                child: Image(
+                    height: 150,
+                    width: 150,
+                    fit: BoxFit.cover,
+                    image: AssetImage("${restaurant.imageUrl}")),
+              ),
+              SizedBox(
+                width: 25,
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 50),
+                child: Center(
+                  child: Column(
+                    children: [
+                      Text("${restaurant.name}"),
+                      Text("${restaurant.address}"),
+                      Text("0.2 miles"),
+                    ],
+                  ),
                 ),
               ),
             ],

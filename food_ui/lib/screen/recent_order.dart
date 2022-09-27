@@ -11,7 +11,7 @@ class RecentOrder extends StatelessWidget {
   buildOrder(BuildContext context, order) {
     return Container(
       margin: EdgeInsets.all(10),
-      width: 320,
+      width: 300,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
         color: Colors.orange,
@@ -54,6 +54,7 @@ class RecentOrder extends StatelessWidget {
         Container(
           height: 200,
           child: ListView.builder(
+              shrinkWrap: true,
               scrollDirection: Axis.horizontal,
               itemCount: currentUser.orders!.length,
               itemBuilder: (context, index) {
